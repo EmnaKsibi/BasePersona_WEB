@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <title>Base Persona | Accueil</title>
+ <!-- jsGrid -->
+  <link rel="stylesheet" href="../../plugins/jsgrid/jsgrid.min.css">
+  <link rel="stylesheet" href="../../plugins/jsgrid/jsgrid-theme.min.css">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <!-- dataTables-->
+  <link href="https://nightly.datatables.net/css/jquery.dataTables.css" rel="stylesheet" type="text/css" />
+
+   
+</head>
+
+
+
+
+
+
+<body class="layout-top-nav skin-black" style="height: auto; min-height: 100%;">
+<div class="wrapper" style="height: auto; min-height: 100%;">
+  
+
+
+<!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light ">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+     
+      <li class="nav-item d-none d-sm-inline-block">
+         <a href="../../index.html" class="nav-link ">Accueil</a>
+      </li>
+
+      
+      <li class="nav-item d-none d-sm-inline-block">
+         <a href="../audit/audit_default.html" class="nav-link">Audit</a>
+      </li>
+
+      <li class="nav-item dropdown">
+          <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Evaluation</a>
+          <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">    
+            <li> <a href="../evaluation/eval_cb.html" class="dropdown-item">CB</a></li>
+            <li class="dropdown-divider"></li>         
+            <li><a href="#" class="dropdown-item">Audiotel</a></li>
+            <li class="dropdown-divider"></li>
+            <li><a href="#" class="dropdown-item">SMS</a></li>
+            <li class="dropdown-divider"></li>
+            <li><a href="#" class="dropdown-item">Smartphone</a></li>
+            <li class="dropdown-divider"></li>
+            <li> <a href="#" class="dropdown-item">Internet</a></li>
+          </ul>
+      </li>
+
+      <li class="nav-item dropdown">
+          <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Mécontentement Client</a>
+          <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">    
+            <li> <a href="../client/client_cb.html" class="dropdown-item">CB</a></li>
+            <li class="dropdown-divider"></li>         
+            <li><a href="#" class="dropdown-item">Audiotel</a></li>
+            <li class="dropdown-divider"></li>
+            <li><a href="#" class="dropdown-item">SMS</a></li>
+            <li class="dropdown-divider"></li>
+            <li><a href="#" class="dropdown-item">Smartphone</a></li>
+            <li class="dropdown-divider"></li>
+            <li> <a href="#" class="dropdown-item">Internet</a></li>
+         </ul>
+      </li>
+      <li class="nav-item dropdown d-none d-sm-inline-block">
+        <a href="../Formation_default.html" class="nav-link">Formation</a>
+      </li>
+      <li class="nav-item dropdown d-none d-sm-inline-block">
+        <a href="../stats_default.html" class="nav-link">Stats</a>
+      </li>
+    </ul>
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      <!-- SEARCH FORM -->
+      <form class="form-inline ">
+        <div class="input-group input-group-sm">
+          <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+          <div class="input-group-append">
+            <!--<button class="btn btn-navbar" type="submit">
+              <i class="fas fa-search"></i>
+            </button>-->
+            <!--changed to link for simulation Purposes-->
+            <a class="btn btn-navbar" href="../voyant/voyant_default.html">
+              <i class="fas fa-search"></i>
+            </a>
+          </div>
+        </div>
+      </form>
+
+      <!-- Notifications Dropdown Menu -->
+      <li class="nav-item dropdown">
+          <a class="nav-link" data-toggle="dropdown" href="#">
+            <i class="far fa-bell"></i>
+            <span class="badge badge-warning navbar-badge">15</span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+            <span class="dropdown-item dropdown-header">3 Notifications</span>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-envelope mr-2"></i>Notification n°1
+              <span class="float-right text-muted text-sm">3 mins</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-users mr-2"></i>Notification n°2
+              <span class="float-right text-muted text-sm">12 hours</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-file mr-2"></i>Notification n°3
+              <span class="float-right text-muted text-sm">2 days</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+          </div>
+      </li>
+
+       <!-- Parametres Dropdown Menu -->
+      <li class="nav-item dropdown">
+          <a class="nav-link" data-toggle="dropdown" href="#">
+            <i class="fas fa-cogs"></i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                <a href="#" class="dropdown-item">
+                   <i class="fas fa-user mr-2"></i>Paramètres en Profil
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="#" class="dropdown-item">
+                   <i class="fas fa-users mr-2"></i>Paramètres en Groupe
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="#" class="dropdown-item">
+                   <i class="fas fa-sign-out-alt  mr-2"></i>Déconnexion
+                </a>
+          </div>
+      </li>
+
+      </ul>
+  </nav>
+<!-- /.navbar -->
+
+ 
+
+
+<!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            
+            <div class="col">
+              <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="voyant_default.html">Profile Voyant</a></li>
+                <li class="breadcrumb-item active">SMS</li>
+              </ol>
+            </div>
+          </div>
+        </div><!-- /.container-fluid -->
+      </section>
+
+      <!-- Main content -->
+      <section class="content">
+            <div class="row">
+                  <div class="col-md-4">
+                            <!-- AREA CHART -->
+                            <div class="card card-purple card-outline">
+                              <div class="card-header">
+                                <h3 class="card-title">Courbe MO/Alias (6 mois Glissant)</h3>
+                              </div>
+                              <div class="card-body">
+                                <div class="chart">
+                                  <canvas id="courbeMO" style="height:250px; min-height:250px"></canvas>
+                                </div>
+                              </div> <!-- /.card-body -->
+                            </div>   <!-- /.card -->
+                  </div><!-- /.col-->
+                   <div class="col-md-4">
+                            <!-- AREA CHART -->
+                            <div class="card card-green card-outline ">
+                              <div class="card-header">
+                                <h3 class="card-title">Courbe TMR (6 mois Glissant)</h3>
+                              </div>
+                              <div class="card-body">
+                                <div class="chart ">
+                                  <canvas id="courbeTMR" style="height:250px; min-height:250px"></canvas>
+                                </div>
+                              </div> <!-- /.card-body -->
+                            </div>   <!-- /.card -->
+                  </div><!-- /.col-->
+                   <div class="col-md-4">
+                            <!-- AREA CHART -->
+                            <div class="card card-blue card-outline">
+                              <div class="card-header">
+                                <h3 class="card-title">Courbe $Photo (6 mois Glissant)</h3>
+                              </div>
+                              <div class="card-body">
+                                <div class="chart">
+                                  <canvas id="courbeDollarPhoto" style="height:250px; min-height:250px"></canvas>
+                                </div>
+                              </div> <!-- /.card-body -->
+                            </div>   <!-- /.card -->
+                 	</div><!-- /.col-->
+                 	<div class="col">
+                        <div class="card card-yellow card-outline">
+                            <div class="card-header">
+                              <h3 class="card-title">Tableau Lecture Message SMS</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                   <table class="table_msg" id="example" cellspacing="0">
+                                          <thead>
+                                              <tr>
+                                                   <th></th>
+                                                   <th width="5%">Date evaluation </th>
+                                                   <th width="5%">Niveau français </th>
+                                                   <th width="5%">Comprehension question </th>
+                                                   <th width="5%">Relance discussion  </th>
+                                                   <th width="5%">Cohérence réponse </th>
+                                                   <th width="5%">Scénario répétitif/ trame </th>
+                                                   <th width="5%">Fait peur au client </th>
+                                                   <th width="5%">Utilisation Supports </th>
+                                                   <th width="5%">Rebondir sur la relance </th>
+                                                   <th width="5%">Proposition transfo/ parachute </th>
+                                                   <th width="5%">MO </th>
+                                                   <th width="5%">Tmr</th>
+                                                   <th width="5%">TMA </th>
+                                                   <th width="5%">M/A </th>
+                                                   <th width="5%">%A<3 </th>
+                                                   <th width="5%" >$Photo </th>
+                                                   <th width="5%">Transfo </th>
+                                                   <th width="15%">Commentaires</th>
+                                              </tr>
+                                          </thead>
+
+                                    </table>
+                             </div><!-- /.card-body -->
+                        </div><!-- /.card -->
+                	</div><!-- /.row-->
+            </div><!-- /.row-->
+		        
+		    <!-- modal commentaire -->
+		    <div class="modal fade" id="comment-details">
+	              <div class="modal-dialog">
+	                <div class="modal-content">
+	                  <div class="modal-header">
+	                    <h4  class="modal-title" id="modal-title"></h4>
+	                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	                      <span aria-hidden="true">&times;</span>
+	                    </button>
+	                  </div>
+	                  <div class="modal-body">
+	                    <p id="comment-row"></p>
+	                  </div>
+	                  
+	                </div> <!-- /.modal-content -->
+	              </div> <!-- /.modal-dialog -->
+	        </div> <!-- /.modal commentaire  -->
+
+
+      </section><!-- /.content -->
+
+  </div>
+<!-- /.content-wrapper -->
+ 
+ 
+
+
+<!-- Main Footer -->
+  <footer class="main-footer d-none">
+    
+  </footer>
+<!-- /.Main Footer -->
+
+
+		
+</div>
+<!-- ./wrapper -->
+
+
+
+<!-- ChartJS -->
+<script src="../../plugins/chart.js/Chart.min.js"></script>
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- jsGrid -->
+<script src="../../plugins/jsgrid/demos/db.js"></script>
+<script src="../../plugins/jsgrid/jsgrid.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+
+<script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.js"></script>
+
+<script type="text/javascript">
+     $(document).ready(function () {
+
+         var table = $('#example').DataTable({
+         	  "searching": false,
+  			  "paging":   false,
+      		  "ordering": false,
+      		  "info":     false, //the left are in the paging showing :"Showing 1 to 4 of 4 entries"
+              "data": testdata.data,
+              select:"single",
+              "columns": [
+                 {
+                     "className": 'details-control',
+                     "orderable": false,
+                     "data": null,
+                     "defaultContent": '',
+                     "render": function () {
+                         return '<i class="fa fa-plus-square" aria-hidden="true"></i>';
+                     },
+                     width:"15px"
+                 },
+	            { "data": "Date_evaluation"},
+	            { "data": "Niveau français"},
+	            { "data": "Comprehension question"},
+	            { "data": "Relance discussion"},
+	            { "data": "Cohérence réponse"},
+	            { "data": "Scénario répétitif/ trame"},
+	            { "data": "Fait peur au client"},
+	            { "data": "Utilisation Supports"},
+	            { "data": "Rebondir sur la relance"},
+	            { "data": "Proposition transfo/ parachute"},
+	            { "data": "MO"},
+	            { "data": "Tmr" },
+	            { "data": "TMA"},
+	            { "data": "M/A"},
+	            { "data": "%A<3"},
+	            { "data": "$Photo"},
+	            { "data": "Transfo"},
+	            { 
+	                "className": 'details-comment',
+	                "orderable": false,
+	                "data": "Commentaires",
+	                "defaultContent": '',
+	                "render": function () {
+	                         return '<i class="fa fa-eye" aria-hidden="true"></i>';
+	                },
+	                width:"15px"
+	            },    
+             ],
+         });
+
+         // Add event listener for opening and closing comment
+         $('#example tbody').on('click', 'td.details-comment', function (e) {
+         	  e.preventDefault();
+            var tr = $(this).closest('tr');
+            var tdi = tr.find("i.fa");
+            var row = table.row(tr);
+            $("#comment-details").modal('show');
+            $('#comment-details').on('shown.bs.modal', function() {
+                $('#modal-title').html(row.data().Date_evaluation);
+                $('#comment-row').html(row.data().Commentaires);
+                });
+            });
+
+         // Add event listener for opening and closing details
+         $('#example tbody').on('click', 'td.details-control', function (e) {
+         	 e.preventDefault();
+             var tr = $(this).closest('tr');
+             var tdi = tr.find("i.fa");
+             var row = table.row(tr);
+
+             if (row.child.isShown()) {
+                 // This row is already open - close it
+                 row.child.hide();
+                 tr.removeClass('shown-details');
+                 tdi.first().removeClass('fa-minus-square');
+                 tdi.first().addClass('fa-plus-square');
+             }
+             else {
+                 // Open this row
+                 row.child(showChildTable(row.data())).show();
+                 tr.addClass('shown-details');
+                 tdi.first().removeClass('fa-plus-square');
+                 tdi.first().addClass('fa-minus-square');
+             }
+         });
+     });
+
+    function showChildTable(d){  
+         // `d` is the original data object for the row
+         return '<table  cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">' +
+             '<tr>' +
+                 '<td>' + d.DateEvent1 + '<td>'+
+                 '<td>' + d.Event1 + '</td>' +
+             '</tr>' +
+             '<tr>' +
+                 '<td>' + d.DateEvent2 + '<td>'+
+                 '<td>' + d.Event2 + '</td>' +
+             '</tr>' +
+              '<tr>' +
+                 '<td>' + d.DateEvent3 + '<td>'+
+                 '<td>' + d.Event3 + '</td>' +
+             '</tr>' +
+              '<tr>' +
+                 '<td>' + d.DateEvent4 + '<td>'+
+                 '<td>' + d.Event4 + '</td>' +
+             '</tr>' +
+              '<tr>' +
+                 '<td>' + d.DateEvent5 + '<td>'+
+                 '<td>' + d.Event5 + '</td>' +
+             '</tr>' +
+              '<tr>' +
+                 '<td>' + d.DateEvent6 + '<td>'+
+                 '<td>' + d.Event6 + '</td>' +
+             '</tr>' +
+         '</table>';  
+    };
+
+ 
+	var testdata = {
+	    "data": [
+	    {   
+            "Date_evaluation": "Sept-19",
+            "Niveau français": 3,
+            "Comprehension question": 4,
+            "Relance discussion": 2,
+            "Cohérence réponse": 4,
+            "Scénario répétitif/ trame":2,
+            "Fait peur au client": 1,
+            "Utilisation Supports":4 ,
+            "Rebondir sur la relance": 3,
+            "Proposition transfo/ parachute":2,
+            "MO": 6000,
+            "Tmr":0.35,
+            "TMA":0.15,
+            "M/A":9.18,
+            "%A<3": 0.33,
+            "$Photo": 25,
+            "Transfo":3,
+            "Commentaires":"C1: amelie6-1904/nathalie17-1908/ponnary1-1809/samuel1-1908/eva5-1903 / reste vague et repète la même chose // insiste pour la transfo // pas de réponse claire// est quand même plus appliquée que sur sms",
+            "Event1":"Lecture Message Date de la validation de la grille d'évaluation (5 Alias)" ,
+            "Event2": "Entretien Manager :Date relative à toute action de retour responsable (Evaluation Mensuel/Lecture Message/Signalement Client)",    
+            "Event3":"Formation Continue  :Date de réalisation de formation",
+            "Event4":"Planification Formation Date de planification de Formation",   
+            "Event5":"Signalement Client  :Date d'insertion du mécontentement Client",   
+            "Event6":"Sanction  Date d'enregistrement de la sanction ",
+            
+            "DateEvent1":"28-Sept-19",
+            "DateEvent2":"24-Sept-19",
+            "DateEvent3":"15-Sept-19",
+            "DateEvent4":"10-Sept-19",
+            "DateEvent5":"8-Sept-19",
+            "DateEvent6":"1-Sept-19",
+
+        },
+     	{   
+            "Date_evaluation": "Aout-19",
+            "Niveau français": 3,
+            "Comprehension question": 4,
+            "Relance discussion": 2,
+            "Cohérence réponse": 4,
+            "Scénario répétitif/ trame":2,
+            "Fait peur au client": 1,
+            "Utilisation Supports":4 ,
+            "Rebondir sur la relance": 3,
+            "Proposition transfo/ parachute":2,
+            "MO": 6000,
+            "Tmr":0.35,
+            "TMA":0.15,
+            "M/A":9.18,
+            "%A<3": 0.33,
+            "$Photo": 25,
+            "Transfo":3,
+            "Commentaires":"C2: amelie6-1904/nathalie17-1908/ponnary1-1809/samuel1-1908/eva5-1903 / reste vague et repète la même chose // insiste pour la transfo // pas de réponse claire// est quand même plus appliquée que sur sms",
+             "Event1":"Lecture Message Date de la validation de la grille d'évaluation (5 Alias)" ,
+            "Event2": "Entretien Manager :Date relative à toute action de retour responsable (Evaluation Mensuel/Lecture Message/Signalement Client)",    
+            "Event3":"Formation Continue  :Date de réalisation de formation",
+            "Event4":"Planification Formation Date de planification de Formation",   
+            "Event5":"Signalement Client  :Date d'insertion du mécontentement Client",   
+            "Event6":"Sanction  Date d'enregistrement de la sanction ",
+            "DateEvent1":"28-Aout-19",
+            "DateEvent2":"24-Aout-19",
+            "DateEvent3":"15-Aout-19",
+            "DateEvent4":"10-Aout-19",
+            "DateEvent5":"8-Aout-19",
+            "DateEvent6":"1-Aout-19",
+
+        },
+     	{   
+            "Date_evaluation": "Juil-19",
+            "Niveau français": 3,
+            "Comprehension question": 4,
+            "Relance discussion": 2,
+            "Cohérence réponse": 4,
+            "Scénario répétitif/ trame":2,
+            "Fait peur au client": 1,
+            "Utilisation Supports":4 ,
+            "Rebondir sur la relance": 3,
+            "Proposition transfo/ parachute":2,
+            "MO": 6000,
+            "Tmr":0.35,
+            "TMA":0.15,
+            "M/A":9.18,
+            "%A<3": 0.33,
+            "$Photo": 25,
+            "Transfo":3,
+            "Commentaires":"C3: amelie6-1904/nathalie17-1908/ponnary1-1809/samuel1-1908/eva5-1903 / reste vague et repète la même chose // insiste pour la transfo // pas de réponse claire// est quand même plus appliquée que sur sms",
+             "Event1":"Lecture Message Date de la validation de la grille d'évaluation (5 Alias)" ,
+            "Event2": "Entretien Manager :Date relative à toute action de retour responsable (Evaluation Mensuel/Lecture Message/Signalement Client)",    
+            "Event3":"Formation Continue  :Date de réalisation de formation",
+            "Event4":"Planification Formation Date de planification de Formation",   
+            "Event5":"Signalement Client  :Date d'insertion du mécontentement Client",   
+            "Event6":"Sanction  Date d'enregistrement de la sanction " ,
+             "DateEvent1":"28-Juil-19",
+            "DateEvent2":"24-Juil-19",
+            "DateEvent3":"15-Juil-19",
+            "DateEvent4":"10-Juil-19",
+            "DateEvent5":"8-Juil-19",
+            "DateEvent6":"1-Juil-19",
+        },
+   		{   
+            "Date_evaluation": "Juin-19",
+            "Niveau français": 3,
+            "Comprehension question": 4,
+            "Relance discussion": 2,
+            "Cohérence réponse": 4,
+            "Scénario répétitif/ trame":2,
+            "Fait peur au client": 1,
+            "Utilisation Supports":4 ,
+            "Rebondir sur la relance": 3,
+            "Proposition transfo/ parachute":2,
+            "MO": 6000,
+            "Tmr":0.35,
+            "TMA":0.15,
+            "M/A":9.18,
+            "%A<3": 0.33,
+            "$Photo": 25,
+            "Transfo":3,
+            "Commentaires":"C4: amelie6-1904/nathalie17-1908/ponnary1-1809/samuel1-1908/eva5-1903 / reste vague et repète la même chose // insiste pour la transfo // pas de réponse claire// est quand même plus appliquée que sur sms",
+             "Event1":"Lecture Message Date de la validation de la grille d'évaluation (5 Alias)" ,
+            "Event2": "Entretien Manager :Date relative à toute action de retour responsable (Evaluation Mensuel/Lecture Message/Signalement Client)",    
+            "Event3":"Formation Continue  :Date de réalisation de formation",
+            "Event4":"Planification Formation Date de planification de Formation",   
+            "Event5":"Signalement Client  :Date d'insertion du mécontentement Client",   
+            "Event6":"Sanction  Date d'enregistrement de la sanction ",
+            "DateEvent1":"28-Juin-19",
+            "DateEvent2":"24-Juin-19",
+            "DateEvent3":"15-Juin-19",
+            "DateEvent4":"10-Juin-19",
+            "DateEvent5":"8-Juin-19",
+            "DateEvent6":"1-Juin-19",
+        }
+    ]
+    };
+</script>
+
+
+
+<script>
+  $(function () {
+    
+    //--------------
+    //- courbeMO CHART -
+    //--------------
+    var courbeMOChartCanvas = $('#courbeMO').get(0).getContext('2d')
+    var courbeMOChartData = {
+      labels  : ['Avr/19', 'Mai/19', 'Juin/20','Juil/20','aout/19', 'sept/19', 'oct/19'],
+      datasets: [
+        {
+          label               : 'Lecture Msg Interne',
+          backgroundColor     : 'rgba(228, 225, 233)',
+          borderWidth         :  '2',          
+          borderColor         : 'purple',
+          pointRadius         : true,
+          pointColor          : 'rgba(210, 214, 222, 1)',
+          pointStrokeColor    : '#228B22',
+          pointHighlightFill  : 'vfff',
+          pointHighlightStroke: 'rgba(60,141,188,1)',
+          data                : [6000, 2500, 3000, 4000, 4500, 5000]
+        }
+      ]
+    }
+
+    //--------------
+    //- courbeTMR CHART -
+    //--------------
+    var courbeTMRChartCanvas = $('#courbeTMR').get(0).getContext('2d')
+    var courbeTMRChartData = {
+      labels  : ['Avr/19', 'Mai/19', 'Juin/20','Juil/20','aout/19', 'sept/19', 'oct/19'],
+      datasets: [
+        {
+          label               : 'Lecture Msg Interne',
+          backgroundColor     : 'rgba(241, 244, 240)',
+          borderWidth         :  '2',          
+          borderColor         : 'green',
+          pointRadius          : true,
+          pointColor          : 'rgba(210, 214, 222, 1)',
+          pointStrokeColor    : '#228B22',
+          pointHighlightFill  : 'vfff',
+          pointHighlightStroke: 'rgba(60,141,188,1)',
+          data                : [0.35, 0.4, 0.5, 1, 0.35, 0.35]
+        }
+      ]
+    }
+
+    //--------------
+    //-  courbeDollarPhoto CHART-
+    //--------------
+    var courbeDollarPhotoChartCanvas = $('#courbeDollarPhoto*').get(0).getContext('2d')
+    var courbeDollarPhotoChartData = {
+      labels  : ['Avr/19', 'Mai/19', 'Juin/20','Juil/20','aout/19', 'sept/19', 'oct/19'],
+      datasets: [
+        {
+          label               : 'Lecture Msg Interne',
+          backgroundColor     : 'rgba(235, 242, 249)',
+          borderWidth         :  '2',
+          borderColor         : 'blue',
+          pointRadius         : true,
+          pointColor          : 'rgba(210, 214, 222, 1)',
+          pointStrokeColor    : '#228B22',
+          pointHighlightFill  : 'vfff',
+          pointHighlightStroke: 'rgba(60,141,188,1)',
+          data                : [60, 20, 30, 40, 45, 50]
+        }
+      ]
+    }
+
+
+    var chartOptions = {
+      maintainAspectRatio : false,
+      responsive : true,
+      legend: {
+        display: false
+      },
+      
+      scales: {
+        xAxes: [{
+          gridLines : {
+            display : true,
+          }
+        }],		
+        yAxes: [{
+	      ticks: {
+			beginAtZero: false,
+		  },
+          gridLines : {
+            display : true,
+          }
+        }]
+      }
+    }
+ 
+
+  var courbeMOChart       = new Chart(courbeMOChartCanvas, { 
+      type: 'line',
+      data: courbeMOChartData, 
+      options: chartOptions
+    })
+  var courbeTMRChart       = new Chart(courbeTMRChartCanvas, { 
+      type: 'line',
+      data: courbeTMRChartData, 
+      options: chartOptions
+    })
+  var courbeDollarPhotoChart       = new Chart(courbeDollarPhotoChartCanvas, { 
+      type: 'line',
+      data: courbeDollarPhotoChartData, 
+      options: chartOptions
+    })
+   
+  })
+</script>
+
+
+
+</body>
+</html>
+ 
