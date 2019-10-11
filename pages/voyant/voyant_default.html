@@ -15,6 +15,9 @@
   <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <!-- dataTables-->
+  <link href="https://nightly.datatables.net/css/jquery.dataTables.css" rel="stylesheet" type="text/css" />
+
 </head>
 <body class="hold-transition sidebar-mini">
 
@@ -311,22 +314,22 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-
+          <!-- row voyant-->
           <div class="row">
 
                 <div class="col-md-4">
-
                       <!-- Profile Image -->
-                      <div class="card card-primary card-outline ">   
+                      <div class="card card card-outline ">   
                           <div class="card-title">
-                                <img class=" img-circle img-sm" src="../../dist/img/flags/spain.png" alt="Flag picture">
-                                <i class="fas fa-info-circle float-right" data-toggle="modal" data-target="#modal-default">Voyance</i>
+                              <img class=" img-sm float-sm-left" src="../../dist/img/flags/france.png" alt="Flag picture"  style="  border-radius: 8px; margin:5px;">
+                              <small class="badge float-sm-right"><i class="fa fa-info-circle " data-toggle="modal" data-target="#voyant-details"></i>Voyance</small> 
                           </div>
                           <div class="card-body box-profile">  
-                                <img class="profile-user-img img-fluid img-circle float-left" src="../../dist/img/user4-128x128.jpg" alt="User profile picture">   
+                                <img class="profile-user-img img-fluid img-circle float-left" src="../../dist/img/user4-128x128.jpg" alt="User profile picture">  
                                 <h3 class="profile-username  text-center">Pseudo</h3>
                                 <p class="text-muted  text-center">France/Autonome
                                 <br>Ancieneté</p>
+                                
                           </div> <!-- /.card-body -->
                       </div><!-- /.card -->
                 </div><!-- /.col -->
@@ -344,46 +347,203 @@
                             </div><!-- /.card-body -->
                       </div><!-- /.card -->
                 </div><!-- /.col -->
+          </div><!-- /.row voyant-->
 
+          <!-- row sms-->
+          <div class="row">
+            <div class="col-md-9">
+                <div class="card ">
+                  <div class="card-header">
+                    <h3 class="card-title">SMS</h3>
+                  </div>
+                <div class="card-body">
+                  <table  id="table_sms" class="dataTable" cellspacing="0">
+                   <thead>
+                      <tr>
+                          <th>Accueil</th>
+                          <th>Utilisation de Supports divinatoires</th>
+                          <th>Communication</th>
+                          <th>Niveau de Français</th>
+                          <th>Commerciale</th>
+                          <th></th>                         
+                      </tr>
+                    </thead>
+                    <tbody>
+                          <td>5</td>
+                          <td>4</td>
+                          <td>3</td>
+                          <td>2</td>
+                          <td>5</td>
+                          <td><i class="fas fa-eye float-right" data-toggle="modal" data-target="#sms-details"></td>
+                    </tbody>
+                  </table>
+                </div><!-- /.card-body -->
+              </div>   <!-- /.card -->                      
+            </div><!-- /.col-->   
 
-                <div class="row">
-                      <div class="col-md-9">
-                          <!-- AREA CHART -->
-                          <div class="card ">
-                            <div class="card-header">
-                              <h3 class="card-title">Courbe Evaluation MSG (6 mois Glissant)</h3>
-                            </div>
-                            <div class="card-body">
-                              <div class="chart">
-                                <canvas id="areaChart" style="height:250px; min-height:250px"></canvas>
-                              </div>
-                            </div> <!-- /.card-body -->
-                          </div>   <!-- /.card -->
-                       
-                      </div><!-- /.col-->
-              
-                      <div class="col-md-3">
-                            <!-- AREA CHART -->
-                            <div class="card ">
-                              <div class="card-header">
-                                   <h3 class="card-title">Informations Importantes</h3>
-                              </div>
-                              <div class="card-body">
-                                  <p class="card-text">*Baisse de Resultat Mo/Alias.
-                                  </br>$Photo.
-                                  </br>*Signalement Client Mecontentement.
-                                  </br>*Evaluation Mensuelle Manquante.
-                                  </p>
-                              </div> <!-- /.card-body -->
-                            </div><!-- /.card -->
-                      </div><!-- /.col -->
+            <div class="col-md-3">
+              <div class="card ">
+                <div class="card-header">
+                  <h3 class="card-title">Informations Importantes</h3>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">*Baisse de Resultat Mo/Alias.
+                    </br>$Photo.
+                    </br>*Signalement Client Mecontentement.
+                    </br>*Evaluation Mensuelle Manquante.
+                  </p>
+                </div> <!-- /.card-body -->
+              </div><!-- /.card -->
+            </div><!-- /.col -->
+          </div><!-- /.row sms-->
+          
+          <!-- row cb-->
+          <div class="row">
+            <div class="col-md-9">
+                <div class="card ">
+                  <div class="card-header">
+                    <h3 class="card-title">CB</h3>
+                  </div>
+                <div class="card-body">
+                  <table  id="table_cb" class="dataTable" cellspacing="0">
+                    <thead>
+                      <tr>
+                          <th>Accueil</th>
+                          <th>Utilisation de Supports divinatoires</th>
+                          <th>Prise en charge du client</th>
+                          <th>Prolongation</th>
+                          <th>Accompagnement</th>
+                          <th>Retour Standard</th>  
+                      </tr>
+                    </thead>
+                    <tbody>
+                          <td>9</td>
+                          <td>7</td>
+                          <td>6</td>
+                          <td>8</td>
+                          <td>4</td>
+                          <td><i class="fas fa-eye float-right" data-toggle="modal" data-target="#cb-details"></td>
+                    </tbody>
+                  </table>
+                </div><!-- /.card-body -->
+              </div>   <!-- /.card -->                      
+            </div><!-- /.col-->   
 
-                </div><!-- /.row -->
-          </div><!-- /.row -->
+            <div class="col-md-3">
+              <div class="card ">
+                <div class="card-header">
+                  <h3 class="card-title">Informations Importantes</h3>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">*Baisse de Resultat Mo/Alias.
+                    </br>$Photo.
+                    </br>*Signalement Client Mecontentement.
+                    </br>*Evaluation Mensuelle Manquante.
+                  </p>
+                </div> <!-- /.card-body -->
+              </div><!-- /.card -->
+            </div><!-- /.col -->
+          </div><!-- /.row cb-->
+
+          <!-- row audiotel-->
+          <div class="row">
+            <div class="col-md-9">
+                <div class="card ">
+                  <div class="card-header">
+                    <h3 class="card-title">Audiotel</h3>
+                  </div>
+                <div class="card-body">
+                  <table  id="table_audiotel" class="dataTable" cellspacing="0">
+                    <thead>
+                      <tr>
+                          <th>Accueil</th>
+                          <th>Utilisation de Supports divinatoires</th>
+                          <th>Prise en charge du client</th>
+                          <th>Transformation  </th>
+                          <th>Prise de Congé  </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                          <td>10</td>
+                          <td>5</td>
+                          <td>8</td>
+                          <td>7</td>
+                          <td><i class="fas fa-eye float-right" data-toggle="modal" data-target="#audiotel-details"></td>
+                    </tbody>
+                  </table>
+                </div><!-- /.card-body -->
+              </div>   <!-- /.card -->                      
+            </div><!-- /.col-->   
+
+            <div class="col-md-3">
+              <div class="card ">
+                <div class="card-header">
+                  <h3 class="card-title">Informations Importantes</h3>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">*Baisse de Resultat Mo/Alias.
+                    </br>$Photo.
+                    </br>*Signalement Client Mecontentement.
+                    </br>*Evaluation Mensuelle Manquante.
+                  </p>
+                </div> <!-- /.card-body -->
+              </div><!-- /.card -->
+            </div><!-- /.col -->
+          </div><!-- /.row audiotel-->
+
+          <!-- row smartphone-->
+          <div class="row">
+            <div class="col-md-9">
+                <div class="card ">
+                  <div class="card-header">
+                    <h3 class="card-title">Smartphone</h3>
+                  </div>
+                <div class="card-body">
+                  <table  id="table_asmartphone" class="dataTable" cellspacing="0">
+                    <thead>
+                      <tr>
+                          <th>Accueil</th>
+                          <th>Utilisation de Supports divinatoires</th>
+                          <th>Prise en charge du client</th>
+                          <th>Niveau de Français</th>
+                          <th>Commerciale</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                          <td>0</td>
+                          <td>3</td>
+                          <td>2</td>
+                          <td>4</td>
+                          <td><i class="fas fa-eye float-right" data-toggle="modal" data-target="#smartphone-details"></td>
+                    </tbody>
+                  </table>
+                </div><!-- /.card-body -->
+              </div>   <!-- /.card -->                      
+            </div><!-- /.col-->   
+
+            <div class="col-md-3">
+              <div class="card ">
+                <div class="card-header">
+                  <h3 class="card-title">Informations Importantes</h3>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">*Baisse de Resultat Mo/Alias.
+                    </br>$Photo.
+                    </br>*Signalement Client Mecontentement.
+                    </br>*Evaluation Mensuelle Manquante.
+                  </p>
+                </div> <!-- /.card-body -->
+              </div><!-- /.card -->
+            </div><!-- /.col -->
+          </div><!-- /.row smartphone-->
 
       </div><!-- /.container-fluid -->
 
-      <div class="modal fade" id="modal-default">
+
+    <!-- modals-->
+
+      <!-- modal voyant-->
+      <div class="modal fade" id="voyant-details">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -400,12 +560,423 @@
                          </br>Domaine
                          </br>Sous Titre
                          </br>Citation</p>
-                  </div>
-                  
+                  </div>                  
                 </div> <!-- /.modal-content -->
               </div> <!-- /.modal-dialog -->
-        </div> <!-- /.modal -->
+      </div> <!-- /.modal voyant-->
+      
+      <!-- modal sms -->
+      <div class="modal fade " id="sms-details">
+                <div class="modal-dialog modal-dialog-centered modal-xl">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h4  class="modal-title">Grille SMS</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <!--<p id="grille-row"></p>
+                      <table class="table_evaluation" id="table_cb" cellspacing="0">-->
+                      <table  class="verticalDisplay" id="v1" cellspacing="0">
+                        <thead>
+                          <tr>
+                               <th><th><th><th><th>
+                               <th bgcolor="yellow">Accueil</th>                              
+                               <th bgcolor="DodgerBlue">Utilisation de Supports divinatoires</th><th bgcolor="DodgerBlue"><th bgcolor="DodgerBlue"><th bgcolor="DodgerBlue">
+                                <th bgcolor="orange">Communication</th><th bgcolor="orange"><th bgcolor="orange">
+                               <th bgcolor="darkolivegreen">Niveau de Français</th><th bgcolor="darkolivegreen">
+                               <th bgcolor="LightSteelBlue">Commerciale</th><th bgcolor="LightSteelBlue"><th bgcolor="LightSteelBlue"><th bgcolor="LightSteelBlue"><th bgcolor="LightSteelBlue">
+                                <th><th> 
+                          </tr>
+                          <tr>
+                              <th><th><th><th><th>
+                              <th  bgcolor="yellow">Est ce que le voyant a fait une bonne prise de contact avec son client ? </th>
+                              <th bgcolor="DodgerBlue">Est ce que le voyant Utilise ses supports ?</th>
+                              <th bgcolor="DodgerBlue">Est ce que le voyant maîtise des supports ?</th>
+                              <th  bgcolor="DodgerBlue">Est ce que le voyant donne des prédictions?</th>
+                              <th bgcolor="orangered">Est ce que le voyant donne des réponses motivées ?</th>
+                              <th  bgcolor="orange">Est ce que le voyant a crée un lien avec son client ? (Empathie, Sympathie …)</th>
+                              <th bgcolor="orangered">Est ce que le voyant sait écouter son client ?</th>
+                              <th bgcolor="orangered">Est ce que le voyant relance la discussion ?</th>     
+                              <th bgcolor="orangered">Est ce que le français du voyant est compréhensible ?</th>
+                              <th bgcolor="darkolivegreen">Est ce que les messages du voyants sont lisibles ?</th>
+                              <th bgcolor="LightSteelBlue">Est ce que le voyant utilise le $ Photo ?</th>
+                              <th bgcolor="LightSteelBlue">Est ce que le voyant motive la demande de photo ?</th>
+                              <th bgcolor="LightSteelBlue">Est ce que le voyant a proposé au client le passage en consultation privée ?</th>
+                              <th bgcolor="LightSteelBlue">Est ce que la proposition de  transformation est bien menée ?</th>
+                              <th bgcolor="LightSteelBlue">Est ce que le voyant continue l'échange en cas de refus de la consultation privée ?</th>
+                          </tr>
+                          <tr>
+                              <th>Pseudo</th>
+                              <th>Date échange</th>
+                              <th>Nb d'échanges</th>
+                              <th>Nv Alias</th>
+                              <th>Thème</th>
+                              <th>Note/5</th>
+                              <th>Note/5</th>
+                              <th>Note/5</th>
+                              <th>Note/5</th>
+                              <th>Note/5</th>
+                              <th>Note/5</th>
+                              <th>Note/5</th>
+                              <th>Note/5</th>
+                              <th>Note/5</th>
+                              <th>Note/5</th>
+                              <th>Note/5</th>
+                              <th>Note/5</th>
+                              <th>Note/5</th>
+                              <th>Note/5</th>
+                              <th>Note/5</th>
+                              <th>Commentaire</th>
+                              <th>Synthèse</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                               <td>ref 1</td>
+                               <td>6/sep</td>
+                               <td>7</td>
+                               <td>Oui</td>
+                               <td>Rencontre</td>
+                               <td>3</td>
+                               <td>5</td>
+                               <td>4</td>
+                               <td>5</td>
+                               <td>2</td>
+                               <td>5</td>
+                               <td>4</td>
+                               <td>0</td>
+                               <td>2</td>
+                               <td>1</td>
+                               <td>3</td>
+                               <td>5</td>
+                               <td>2</td>
+                               <td>2</td>
+                               <td>5</td>
+                               <td>Texte de Commentaire</td>
+                               <td>Texte de Synthèse</td>
+                          </tr>
+                        </tbody>
+                       </table>
+                    </div>
+                    
+                  </div> <!-- /.modal-content -->
+                </div> <!-- /.modal-dialog -->
+      </div> <!-- /.modal sms  -->    
         
+      <!-- modal cb -->
+      <div class="modal fade " id="cb-details">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4  class="modal-title">Grille CB</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <table  class="verticalDisplay" id="v2" cellspacing="0">
+                <thead>
+                  <tr>
+                    <th><th><th><th><th><th><th><th>
+                    <th bgcolor="yellow">Accueil</th>                              
+                    <th bgcolor="DodgerBlue">Utilisation de Supports divinatoires</th><th bgcolor="DodgerBlue"><th bgcolor="DodgerBlue">
+                    <th bgcolor="orange">Prise en charge du client</th><th bgcolor="orange"><th bgcolor="orange"><th bgcolor="orange">
+                    <th bgcolor="LightSteelBlue">Prolongation</th><th bgcolor="LightSteelBlue"><th bgcolor="LightSteelBlue">
+                    <th bgcolor="orangered">Accompagnement</th>
+                    <th bgcolor="Tan">Prise de RDV</th><th bgcolor="Tan"><th bgcolor="Tan"><th bgcolor="Tan">
+                    <th bgcolor="darkolivegreen">Retour Standard</th><th bgcolor="darkolivegreen"><th bgcolor="darkolivegreen"><th bgcolor="darkolivegreen">
+                    <th><th> 
+                  </tr>
+                  <tr>
+                    <th><th><th><th><th><th><th><th>
+                    <th bgcolor="yellow">Est-ce que le voyant a fait une bonne prise de contact avec son client (Accueil : Chaleureux, Convivial, ...) </th>
+                    <th bgcolor="DodgerBlue">Est ce que le voyant Utilise ses supports ?</th>
+                    <th bgcolor="DodgerBlue">Est ce que le voyant donne des prédictions ?</th>
+                    <th  bgcolor="DodgerBlue">Est ce que le voyant donne des réponses motivées ?</th>
+                    <th bgcolor="orange">Est ce que le voyant a crée un lien avec son client ? (Empathie, Sympathie …)</th>
+                    <th  bgcolor="orange">Est ce que le voyant sait écouter son client ?</th>
+                    <th bgcolor="orange">Est ce que le voyant ne parle pas beaucoup ?</th>
+                    <th bgcolor="orange">Est ce que le voyant relance la discussion ?</th>
+                    <th bgcolor="LightSteelBlue">Est ce que le voyant a bien fait comprendre au client le passage au temps suplementaire ?</th>
+                    <th bgcolor="LightSteelBlue">Est ce que le voyant a obtenu l’accord de son client pour prolonger ?</th>
+                    <th bgcolor="LightSteelBlue">Est ce que le voyant tient compte de la situation financière de son client ?</th>     
+                    <th bgcolor="orangered">Est ce que le voyant a suscité l'interêt du client pour lui proposer de l'accompagner ? </th>
+                    <th bgcolor="Tan">Est que le voyant a motivé son prochain RDV ?</th>
+                    <th bgcolor="Tan">Est ce que le voyant a bien vérouillé la date du prochain RDV ?</th>
+                    <th bgcolor="Tan">Est ce que le voyant a respecté les délais de fixation du prochain ? RDV (3J / NV Client ; 8 à 12J / Rappel)</th>
+                    <th bgcolor="Tan">Est ce que le RDV a été pris par le client ?</th>
+                    <th bgcolor="darkolivegreen">Est ce que le voyant a demandé au client de rester en ligne ?</th>
+                    <th bgcolor="darkolivegreen">Est ce que le client a été Transféré au standard ?</th>
+                    <th bgcolor="darkolivegreen">Est ce qu'au retour standard le temps d'attente du client est inférieur à 30 sec</th>
+                    <th bgcolor="darkolivegreen">Commentaire Standard Vs Voyant (Attention, si important à reporter)</th>
+                  </tr>
+                  <tr>
+                    <th>Réf</th>
+                    <th>Date_RDV</th>
+                    <th>Durée_RDV</th>
+                    <th>Type RDV</th>
+                    <th>Nv Client</th>
+                    <th>Prénom</th>
+                    <th>Date de Naissance</th>
+                    <th>Thème</th>
+                    <th>Note/10</th>
+                    <th>Note/10</th>
+                    <th>Note/10</th>
+                    <th>Note/10</th>
+                    <th>Note/10</th>
+                    <th>Note/10</th>
+                    <th>Note/10</th>
+                    <th>Note/10</th>
+                    <th>Note/10</th>
+                    <th>Note/10</th>
+                    <th>Note/10</th>
+                    <th>Note/10</th>
+                    <th>Note/10</th>
+                    <th>Note/10</th>
+                    <th>Note/10</th>
+                    <th>Note/10</th>
+                    <th>Note/10</th>
+                    <th>Note/10</th>
+                    <th>Note/10</th>
+                    <th>Note/10</th>
+                    <th>Commentaire</th>
+                    <th>Synthèse</th>
+                  </tr>
+                </thead>
+              <tbody>
+                <tr>
+                  <td>ref 1</td>
+                  <td>6/sep</td>
+                  <td>30min</td>
+                  <td>Rappel</td>
+                  <td>oui</td>
+                  <td>jaden</td>
+                  <td>15/5/1940</td>
+                  <td>Rencontre</td>
+                  <td>5</td>
+                  <td>2</td>
+                  <td>5</td>
+                  <td>4</td>
+                  <td>0</td>
+                  <td>2</td>
+                  <td>1</td>
+                  <td>3</td>
+                  <td>10</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>5</td>
+                  <td>5</td>
+                  <td>5</td>
+                  <td>8</td>
+                  <td>5</td>
+                  <td>5</td>
+                  <td>9</td>
+                  <td>5</td>
+                  <td>9</td>
+                  <td>Texte de Commentaire</td>
+                  <td>Texte de Synthèse</td>
+                </tr>
+              </tbody>
+              </table>
+            </div>
+          </div> <!-- /.modal-content -->
+        </div> <!-- /.modal-dialog -->
+      </div> <!-- /.modal cb  -->    
+
+      <!-- modal audiotel -->
+      <div class="modal fade " id="audiotel-details">
+          <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4  class="modal-title">Grille Audiotel</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <table  class="verticalDisplay" id="v3" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th><th><th><th><th><th><th><th>
+                      <th bgcolor="yellow">Accueil</th>                              
+                      <th bgcolor="DodgerBlue">Utilisation de Supports divinatoires</th><th bgcolor="DodgerBlue"><th bgcolor="DodgerBlue">
+                      <th bgcolor="orange">Prise en charge du client</th><th bgcolor="orange"><th bgcolor="orange"><th bgcolor="orange">
+                      <th bgcolor="LightSteelBlue">Transformation</th><th bgcolor="LightSteelBlue">
+                      <th bgcolor="Tan">Prise de Congé</th><th bgcolor="Tan">
+                      <th><th> 
+                    </tr>
+                    <tr>
+                      <th><th><th><th><th><th><th><th>
+                      <th bgcolor="yellow">Est-ce que le voyant a fait une bonne prise de contact avec son client (Accueil : Chaleureux, Convivial, ...)</th>
+                      <th bgcolor="DodgerBlue">Est ce que le voyant Utilise ses supports ?</th>
+                      <th bgcolor="DodgerBlue">Est ce que le voyant donne des prédictions ?</th>
+                      <th bgcolor="DodgerBlue">Est ce que le voyant donne des réponses motivées ?</th>
+                      <th bgcolor="orange">Est ce que le voyant a crée un lien avec son client ? (Empathie, Sympathie …)</th>
+                      <th bgcolor="orange">Est ce que le voyant sait écouter son client ?</th>
+                      <th bgcolor="orange">Est ce que le voyant ne parle pas beaucoup ?</th>
+                      <th bgcolor="orange">Est ce que le voyant relance la discussion ?</th>
+                      <th bgcolor="LightSteelBlue">Est ce que le voyant a proposé le passage en consultation privée ?</th>
+                      <th bgcolor="LightSteelBlue">Est ce que la proposition du passage en privée est motivée ?</th>
+                      <th bgcolor="Tan">Est ce que voyant a bien communiqué le numéro RTC ?</th>
+                      <th bgcolor="Tan">Est ce que le voyant a correctement pris congé ?</th>
+                    </tr>
+                    <tr>
+                      <th>Réf</th>
+                      <th>Date Appel</th>
+                      <th>Durée Appel</th>
+                      <th>Type RDV</th>
+                      <th>Nv Client</th>
+                      <th>Prénom</th>
+                      <th>Date de Naissance</th>
+                      <th>Thème</th>
+                      <th>Note/10</th>
+                      <th>Note/10</th>
+                      <th>Note/10</th>
+                      <th>Note/10</th>
+                      <th>Note/10</th>
+                      <th>Note/10</th>
+                      <th>Note/10</th>
+                      <th>Note/10</th>
+                      <th>Note/10</th>
+                      <th>Note/10</th>
+                      <th>Note/10</th>
+                      <th>Note/10</th>
+                      <th>Commentaire</th>
+                      <th>Synthèse</th>
+                    </tr>
+                  </thead>
+                <tbody>
+                  <tr>
+                    <td>ref 1</td>
+                    <td>6/sep</td>
+                    <td>30min</td>
+                    <td>Stars</td>
+                    <td>oui</td>
+                    <td>Jaden</td>
+                    <td>15/5/1940</td>
+                    <td>Rencontre</td>
+                    <td>5</td>
+                    <td>2</td>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>10</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>5</td>
+                    <td>Texte de Commentaire</td>
+                    <td>Texte de Synthèse</td>
+                  </tr>
+                </tbody>
+                </table>
+              </div>
+            </div> <!-- /.modal-content -->
+          </div> <!-- /.modal-dialog -->
+      </div> <!-- /.modal audiotel  -->    
+
+      <!-- modal smartphone -->
+      <div class="modal fade " id="smartphone-details">
+          <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4  class="modal-title">Grille Smartphone</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <table  class="verticalDisplay" id="v4" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th><th><th><th><th>
+                      <th bgcolor="yellow">Accueil</th>                              
+                      <th bgcolor="DodgerBlue">Utilisation de Supports divinatoires</th><th bgcolor="DodgerBlue"><th bgcolor="DodgerBlue"><th bgcolor="DodgerBlue">
+                      <th bgcolor="orange">Prise en charge du client</th><th bgcolor="orange"><th bgcolor="orange">
+                      <th bgcolor="darkolivegreen">Niveau de Français</th><th bgcolor="darkolivegreen">
+                      <th bgcolor="LightSteelBlue">Commerciale</th><th bgcolor="LightSteelBlue"><th bgcolor="LightSteelBlue"><th bgcolor="LightSteelBlue">
+                      <th><th> 
+                    </tr>
+                    <tr>
+                      <th><th><th><th><th>
+                      <th bgcolor="yellow">Est-ce que le voyant a fait une bonne prise de contact avec son client (Accueil : Chaleureux, Convivial, ...)</th>
+                      <th bgcolor="DodgerBlue">Est ce que le voyant Utilise ses supports ?</th>
+                      <th bgcolor="DodgerBlue">Est ce que le voyant maîtise des supports ?</th>
+                      <th bgcolor="DodgerBlue">Est ce que le voyant donne des prédictions ?</th>
+                      <th bgcolor="DodgerBlue">Est ce que le voyant donne des réponses motivées ?</th>
+                      <th bgcolor="orange">Est ce que le voyant a crée un lien avec son client ? (Empathie, Sympathie …)</th>
+                      <th bgcolor="orange">Est ce que le voyant sait écouter son client ?</th>
+                      <th bgcolor="orange">Est ce que le voyant relance la discussion ?</th>
+                      <th bgcolor="darkolivegreen">Est ce que le français du voyant est compréhensible ?</th>
+                      <th bgcolor="darkolivegreen">Est ce que les messages du voyants sont lisibles ?</th>
+                      <th bgcolor="LightSteelBlue">Est ce que le voyant motive la demande de photo ?</th>
+                      <th bgcolor="LightSteelBlue">Est ce que le voyant a proposé au client le passage en consultation privée ?</th>
+                      <th bgcolor="LightSteelBlue">Est ce que la proposition de  transformation est bien menée ?</th>
+                      <th bgcolor="LightSteelBlue">Est ce que le voyant continue l'échange en cas de refus de la consultation privée ?</th>
+                    </tr>
+                    <tr>
+                      <th>Pseudo</th>
+                      <th>Date échange</th>
+                      <th>Nombre d'échanges</th>
+                      <th>Nv Alias</th>
+                      <th>Thème</th>
+                      <th>Note/5</th>
+                      <th>Note/5</th>
+                      <th>Note/5</th>
+                      <th>Note/5</th>
+                      <th>Note/5</th>
+                      <th>Note/5</th>
+                      <th>Note/5</th>
+                      <th>Note/5</th>
+                      <th>Note/5</th>
+                      <th>Note/5</th>
+                      <th>Note/5</th>
+                      <th>Note/5</th>
+                      <th>Note/5</th>
+                      <th>Note/5</th>
+                      <th>Commentaire</th>
+                      <th>Synthèse</th>
+                    </tr>
+                  </thead>
+                <tbody>
+                  <tr>
+                    <td>ref 1</td>
+                    <td>6/sep</td>
+                    <td>20</td>
+                    <td>oui</td>
+                    <td>Rencontre</td>
+                    <td>5</td>
+                    <td>2</td>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>0</td>
+                    <td>Texte de Commentaire</td>
+                    <td>Texte de Synthèse</td>
+                  </tr>
+                </tbody>
+                </table>
+              </div>
+            </div> <!-- /.modal-content -->
+          </div> <!-- /.modal-dialog -->
+      </div> <!-- /.modal smartphone  -->  
+    
+
+    <!-- /.modals-->
+
+
     </section>
     <!-- /.content -->
 
@@ -437,121 +1008,9 @@
 <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="../../dist/js/adminlte.min.js"></script>
+<!-- Datatables -->
+<script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.js"></script>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script>
-  $(function () {
-    /* ChartJS
-     * -------
-     * Here we will create a few charts using ChartJS
-     */
-
-    //--------------
-    //- AREA CHART -
-    //--------------
-
-    // Get context with jQuery - using jQuery's .get() method.
-    var areaChartCanvas = $('#areaChart').get(0).getContext('2d')
-
-    var areaChartData = {
-      labels  : ['aout/19', 'sept/19', 'oct/19', 'nov/19', 'dec/19', 'Jan/20','Fev/20'],
-      datasets: [
-        {
-          label               : 'Lecture Msg Interne',
-          backgroundColor     : '#88000000',
-          borderWidth         :  '2',  
-          borderColor         : 'purple',
-          pointRadius         : '2',
-          pointStrokeColor    : '#fff',
-          pointHighlightFill  :  "#fff",
-          pointHighlightStroke: 'rgba(60,141,188,1)',
-          data                : [1, 0, 5, 3, 2, 1, 0]
-        },
-        {
-          label               : 'Evaluation Externe',
-          backgroundColor     : '#88000000' ,
-          borderWidth         :  '2',  
-          borderColor         : 'green',
-          pointRadius         : '2',
-          pointColor          : 'rgba(210, 214, 222, 1)',
-          pointStrokeColor    : '#fff',
-          pointHighlightFill :  "#fff",
-          pointHighlightStroke: 'rgba(220,220,220,1)',
-          data                : [1, 2, 1, 3, 4, 5, 2]
-        },
-
-      ]
-    }
-    var areaChartOptions = {
-      maintainAspectRatio : false,
-      responsive : true,
-      legend: {
-        display: true,
-            position:'bottom',
-
-      },
-      scales: {
-        xAxes: [{
-          
-          gridLines : {
-            display : true,
-          }
-        }],
-        yAxes: [{
-          ticks: {
-            stepSize:1,
-            beginAtZero: true,
-          },
-          gridLines : {
-            display : true,
-          }
-        }]
-      }
-    }
- 
-
-    // This will get the first returned node in the jQuery collection.
-    var areaChart       = new Chart(areaChartCanvas, { 
-      type: 'line',
-      data: areaChartData, 
-      options: areaChartOptions
-
-    })
-
-    //-------------
-    //- LINE CHART -
-    //--------------
-    var lineChartCanvas = $('#lineChart').get(0).getContext('2d')
-    var lineChartOptions = jQuery.extend(true, {}, areaChartOptions)
-    var lineChartData = jQuery.extend(true, {}, areaChartData)
-    lineChartData.datasets[0].fill = false;
-    lineChartData.datasets[1].fill = false;
-    lineChartOptions.datasetFill = false
-
-    var lineChart = new Chart(lineChartCanvas, { 
-      type: 'line',
-      data: lineChartData, 
-      options: lineChartOptions
-    })
-  })
-</script>
 </body>
 </html>

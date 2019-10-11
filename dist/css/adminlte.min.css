@@ -35,15 +35,14 @@
   border-top: 0 solid rgba(0, 0, 0, 0);
 }
 
-
-
+ 
 
 
 /**********************
 **Styling datatable
 *************************/
 
-.table_msg{
+table{
   table-layout: fixed;
   width: 100%; 
   font-size: 12px !important;
@@ -76,4 +75,29 @@ table.dataTable tbody td.no-padding {
 }
 
 
+
+/**********************
+**Styling vertical datatable
+**/
+
+
+#v1
+{
+     border-collapse: collapse;
+    border-spacing: 0;
+}
+ table.verticalDisplay th,table.verticalDisplay td
+{ height: 25px;
+     empty-cells: hide;
+     
+    padding: 2px 4px;
+    display: block;
+}
+
+table.verticalDisplay tr ,table.verticalDisplay thead, table.verticalDisplay tbody
+{ display: block; float: left; }
+/*table.verticalDisplay td{
+  text-align: center;
+
+}
 
