@@ -42,21 +42,13 @@
 **Styling datatable
 *************************/
 
-table{
+.master-table{
   table-layout: fixed;
   width: 100%; 
   font-size: 12px !important;
 }
-table.dataTable tbody th, table.dataTable tbody .table-group td {
-    padding: 0;
-}
-table.dataTable tbody th, table.dataTable tbody .table-group td span {
-    padding: 8px 10px;
-    display: block;
-    color: silver;
-    background:#eee;
-}
-td.details-comment {
+ 
+td.details-comment ,.fa-eye{
   cursor: pointer;
 }
 td.details-control {
@@ -66,12 +58,8 @@ td.details-control {
 tr.shown-details td.details-control,tr.shown-comment td.details-comment{
   color:#dc3545;
 }
-
 div.slider {
     display: none;
-}
-table.dataTable tbody td.no-padding {
-    padding: 0;
 }
 
 
@@ -80,15 +68,17 @@ table.dataTable tbody td.no-padding {
 **Styling vertical datatable
 **/
 
-
-#v1
+#v1,#v2,#v3,#v4
 {
-     border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%; 
+    font-size: 14px !important; 
+    border-collapse: collapse;
     border-spacing: 0;
 }
  table.verticalDisplay th,table.verticalDisplay td
-{ height: 25px;
-     empty-cells: hide;
+{  height: 25px;
+   empty-cells: hide;
      
     padding: 2px 4px;
     display: block;
@@ -96,8 +86,4 @@ table.dataTable tbody td.no-padding {
 
 table.verticalDisplay tr ,table.verticalDisplay thead, table.verticalDisplay tbody
 { display: block; float: left; }
-/*table.verticalDisplay td{
-  text-align: center;
-
-}
 

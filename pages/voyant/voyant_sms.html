@@ -220,7 +220,7 @@
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
-                                   <table  id="example" cellspacing="0">
+                                   <table class="master-table" id="table-lecture-sms" cellspacing="0">
                                           <thead>
                                               <tr>
                                                    <th></th>
@@ -310,7 +310,7 @@
 <script type="text/javascript">
      $(document).ready(function () {
 
-         var table = $('#example').DataTable({
+         var table = $('#table-lecture-sms').DataTable({
          	  "searching": false,
   			  "paging":   false,
       		  "ordering": false,
@@ -359,7 +359,7 @@
          });
 
          // Add event listener for opening and closing comment
-         $('#example tbody').on('click', 'td.details-comment', function (e) {
+         $('#table-lecture-sms tbody').on('click', 'td.details-comment', function (e) {
          	  e.preventDefault();
             var tr = $(this).closest('tr');
             var tdi = tr.find("i.fa");
@@ -372,7 +372,7 @@
             });
 
          // Add event listener for opening and closing details
-         $('#example tbody').on('click', 'td.details-control', function (e) {
+         $('#table-lecture-sms tbody').on('click', 'td.details-control', function (e) {
          	 e.preventDefault();
              var tr = $(this).closest('tr');
              var tdi = tr.find("i.fa");
